@@ -72,10 +72,10 @@
 <body style="overflow-y: visible;">
 
 	
-	<form name="sendin" action="$(link-login-only)" method="post">
+	<form name="sendin" action="" method="post">
 		<input type="hidden" name="username" />
 		<input type="hidden" name="password" />
-		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="dst" value="" />
 		<input type="hidden" name="popup" value="true" />
 	</form>
 	<script type="text/javascript" src="js/md5.js"></script>
@@ -83,7 +83,7 @@
 			< !--
 			function doLogin() {
 				document.sendin.username.value = document.login.username.value;
-				document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+				document.sendin.password.value = hexMD5('' + document.login.password.value + '$(chap-challenge)');
 				document.sendin.submit();
 				return false;
 			}
@@ -104,15 +104,15 @@
 					<div class="menu">
 						<a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
 						<ul class="nav" id="nav">
-							$(if login-by)
+							
 							<li class="active">
 								<a href="status.html"><i class="fa fa-gear" aria-hidden="true"></i> Status</a>
 							</li>
-							$(else)
+							
 							<li class="active">
 								<a href="login.html"><i class="fa fa-gear" aria-hidden="true"></i> Login</a>
 							</li>
-							$(endif)
+							
 							<li>
 								<a href="pricing.html"><i class="fa fa-gear" aria-hidden="true"></i> Paket</a>
 							</li>
@@ -138,7 +138,7 @@
 			</div>
 			<div class="header_bottom">
 				<h1 id="alert" class="m_head wow rollIn" data-wow-delay="0.4s">.::Selamat Datang di area Wifi::. &nbsp;
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $(identity)</u></h1>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </u></h1>
 				<div class="video_buttons">
 					<div class="video_but"> <a style="min-width:150px;font-weight: bold" href="#trial"
 							data-toggle="modal" data-target="#trial" class="fa-btn btn-1 btn-1e">Coba Gratis [ Trial
@@ -153,14 +153,14 @@
 		</div>
 	</div>
 
-	$(if error)
+	
 	<script type="text/javascript">
-		var error = "$(error)";
-		var error1 = "user $(username) has reached uptime limit";
-		var error2 = "user $(username) has reached traffic limit";
+		var error = "";
+		var error1 = " has reached uptime limit";
+		var error2 = "user  has reached traffic limit";
 		var error3 = "no valid profile found";
 		var error4 = "invalid username or password";
-		var error5 = "user &lt;$(username)&gt; not found";
+		var error5 = "user &lt;&gt; not found";
 		var error6 = "simultaneous session limit reached";
 
 		if (error == error1 || error == error2 || error == error3) {
@@ -172,10 +172,10 @@
 		} else if (error == error6) {
 			document.getElementById("alert").innerHTML = "<u>informasi login</u><br>Jumlah Session Login Telah Dibatasi";
 		} else {
-			document.getElementById("alert").innerHTML = "<u>informasi login</u><br>$(error)";
+			document.getElementById("alert").innerHTML = "<u>informasi login</u><br>";
 		} 
 	</script>
-	$(endif)
+	
 	<style>
 		.blink {
 			animation: blink-animation 1s steps(5, start) infinite;
