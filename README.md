@@ -1,1 +1,1 @@
-# Mikriting
+# https://asralinside.github.io/PUBG/
